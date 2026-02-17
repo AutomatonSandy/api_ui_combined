@@ -24,3 +24,4 @@ jobs:
 
       - name: Run Smoke Suite
         run: mvn clean test -Papi-tests
+
