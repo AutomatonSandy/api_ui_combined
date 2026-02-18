@@ -28,5 +28,17 @@ jobs:
       - name: Run Tests
         run: mvn clean test -Pui-tests
 
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: target/surefire-reports/
+
+      - name: Upload Videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-videos
+          path: videos/
+
       - name: Stop Grid
         run: docker compose down
