@@ -1,4 +1,4 @@
-name: run api tests
+name: run UI tests on Dockers
 
 on:
   push:
