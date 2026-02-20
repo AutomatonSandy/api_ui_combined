@@ -3,11 +3,10 @@ package base;
 import config.ConfigReader;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
-import utils.AuthManager;
 
 import static io.restassured.RestAssured.given;
 
-public class BaseTest {
+public class BaseAPITest {
 
     @BeforeClass
     public void setup() {

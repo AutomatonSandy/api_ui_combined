@@ -1,4 +1,4 @@
-package utils;
+package api_utils;
 
 import config.ConfigReader;
 import io.restassured.specification.RequestSpecification;

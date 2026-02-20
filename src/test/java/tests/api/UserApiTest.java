@@ -1,15 +1,15 @@
 package tests.api;
 
-import base.BaseTest;
-import clients.RestClient;
+import base.BaseAPITest;
+import api_clients.RestClient;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import payloads.UserPayload;
-import utils.AuthManager;
-import utils.Endpoints;
+import api_payloads.UserPayload;
+import api_utils.AuthManager;
+import api_utils.Endpoints;
 
-public class UserApiTest extends BaseTest {
+public class UserApiTest extends BaseAPITest {
 
 
     @Test

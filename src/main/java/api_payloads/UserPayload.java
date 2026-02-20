@@ -1,4 +1,4 @@
-package payloads;
+package api_payloads;
 
 public class UserPayload {
 	private String name;

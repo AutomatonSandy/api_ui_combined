@@ -2,7 +2,6 @@ package tests.ui;
 
 import base.BaseUITest;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 
 public class LoginTests extends BaseUITest {
 

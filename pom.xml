@@ -56,6 +56,17 @@
           <artifactId>webdrivermanager</artifactId>
           <version>5.6.3</version>
       </dependency>
+      <dependency>
+          <groupId>tools.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>3.0.4</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.opencsv</groupId>
+          <artifactId>opencsv</artifactId>
+          <version>5.9</version>
+      </dependency>
   </dependencies>
     <build>
         <plugins>
@@ -90,13 +101,30 @@
                          <artifactId>maven-surefire-plugin</artifactId>
                          <configuration>
                              <suiteXmlFiles>
-                                 <suiteXmlFile>ApiTest.xml</suiteXmlFile>
+                                 <suiteXmlFile>src/test/resources/suites/ApiTest.xml</suiteXmlFile>
                              </suiteXmlFiles>
                          </configuration>
                      </plugin>
                  </plugins>
              </build>
          </profile>
+     <profile>
+         <id>petStore_api-tests</id>
+         <build>
+             <plugins>
+                 <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-surefire-plugin</artifactId>
+                     <configuration>
+                         <suiteXmlFiles>
+                             <suiteXmlFile>src/test/resources/suites/PetStorePostTest.xml</suiteXmlFile>
+                             <suiteXmlFile>src/test/resources/suites/PetStoreGetTest.xml</suiteXmlFile>
+                         </suiteXmlFiles>
+                     </configuration>
+                 </plugin>
+             </plugins>
+         </build>
+     </profile>
          <profile>
              <id>ui-tests</id>
              <properties>
