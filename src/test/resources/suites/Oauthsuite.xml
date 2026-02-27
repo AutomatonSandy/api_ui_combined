@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Oauth Automation Suite">
+
+    <test name=" Test Oauth API Tests">
+        <classes>
+            <class name="tests.api_ui_oauth.ui.pom.LoginPage" />
+            <class name="tests.api_ui_oauth.api.OAuthTest"></class>
+        </classes>
+    </test>
+
+</suite>
