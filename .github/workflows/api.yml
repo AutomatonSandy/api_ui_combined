@@ -25,15 +25,17 @@ jobs:
       - name: Run Smoke Suite
         run: mvn clean test -PpetStore_api-tests
 
-      - name: Upload Reports
+      - name: Install Allure
+        run: |
+            sudo apt-add-repository ppa:qameta/allure
+            sudo apt-get update
+            sudo apt-get install allure
+
+      - name: Generate Allure Report
+        run: allure generate target/allure-results --clean -o target/allure-report
+
+      - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
-          path: target/surefire-reports/
-
-      - name: Publish Test Results (detailed)
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        with:
-          files: "**/target/surefire-reports/"
-        # Optional: additional configuration for pull request comments, annotations, etc.
-        if: always()
+          name: Allure-Report
+          path: target/allure-report

@@ -6,6 +6,7 @@ import api_utils.AuthManager;
 import api_utils.Endpoints;
 import base.BaseAPITest;
 import data_utils.CSVReaderUtil;
+import io.qameta.allure.*;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -23,6 +24,11 @@ public class PetGetOperations extends BaseAPITest {
     }
 
     @Test(dataProvider = "petGetDataProvider" )
+    @Epic("Authentication")
+    @Feature("Login")
+    @Story("Valid Login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verify Get Operation with id")
     public void getOperations(Map<String,String> dataMap){
         int id =Integer.parseInt(dataMap.get("id"));
         Response response = RestClient.get(AuthManager.getAuthSpec(), Endpoints.GET_PET, id );
