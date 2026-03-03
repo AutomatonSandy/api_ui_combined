@@ -30,3 +30,10 @@ jobs:
         with:
           name: test-report
           path: target/surefire-reports/
+
+      - name: Publish Test Results (detailed)
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: "**/target/surefire-reports/TEST-*.xml"
+        # Optional: additional configuration for pull request comments, annotations, etc.
+        if: always()

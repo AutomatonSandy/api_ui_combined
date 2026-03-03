@@ -146,9 +146,6 @@
          </profile>
      <profile>
          <id>retry-tests</id>
-<!--         <properties>-->
-<!--             <grid.url>http://localhost:4444/wd/hub</grid.url>-->
-<!--         </properties>-->
          <build>
              <plugins>
                  <plugin>
