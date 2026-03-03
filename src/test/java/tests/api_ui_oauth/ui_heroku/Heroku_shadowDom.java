@@ -22,7 +22,6 @@ public class Heroku_shadowDom extends BasePage {
         verifyCorrectPage();
         String shadowHostString = "*//div[@id='content']/my-paragraph[1]";
         WebElement shadowHost = driver.findElement(By.xpath(shadowHostString));
-       // WebElement shadowHost = driver.findElements(By.cssSelector("my-paragraph")).get(0);
         SearchContext context = shadowHost.getShadowRoot();
         WebElement shadowElement = context.findElement(By.cssSelector("p"));
         System.out.println(shadowElement.getText());
